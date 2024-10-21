@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'made';
+    src: url('./fonts/made_canvas/made-regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'made', sans-serif;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f4f0;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: #5f5a4d;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #908471;
+}
