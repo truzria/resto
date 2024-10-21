@@ -7,7 +7,7 @@
 
 h1 {
     font-family: 'made', sans-serif;
-
+    font-weight: bold;
 }
 
 body {
@@ -15,11 +15,13 @@ body {
     flex-direction: column;
     background-color: #f7f4f0;
     background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+
 }
 
 header {
     display: flex;
     justify-content: center;
+    padding: 10px 0;
 }
 
 main {
@@ -36,4 +38,12 @@ footer {
     justify-content: center;
     align-items: center;
     color: #908471;
+}
+.custom-color {
+    color: #9d8161;
+    font-size: 2vh;
+}
+
+.custom-color:hover {
+    color: #7b5037;
 }
