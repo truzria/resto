@@ -1,9 +1,11 @@
-import express from "express";
+import express from 'express';
+import path from 'path';
+
 const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
-    res.send("Hello");
+    res.sendFile(path.join(process.cwd(), 'frontend', 'index.html'));
 });
 
 app.listen(port, () => {
