@@ -1,11 +1,10 @@
-<!--
-1) add stylesheet styles.css into frontend/styles/styles.css
-2) use these styles in index.html
-3) Create main element in your body and put all staff inside <body><header></header><main>…</main><footer></footer></body>
-4) make sure main is displayed flex, content is justified center, items are aligned in center
-5) add some background and font color
-6) check it on localhost, commit and push
--->
+<!--1) Create a new POST API on BE on route “/register-interest”
+2) If req.body.email is empty then return code 405
+3) Else log into console req.body.email and return code 200
+4) Try it in Postman
+5) If not working - hint: check body-parser from previous lectures
+5) git commit and push to have it live
+6) Try it in postman calling render url https://resto-3uhc.onrender.com/register-interest (ask Martin for hints on that)-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +32,6 @@
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="#" class="nav-link px-2 link-secondary custom-color">Home</a></li>
         <li><a href="#" class="nav-link px-2 custom-color">Features</a></li>
-        <li><a href="#" class="nav-link px-2 custom-color">Contact</a></li>
         <li><a href="#" class="nav-link px-2 custom-color">About</a></li>
     </ul>
 
