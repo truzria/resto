@@ -1,7 +1,8 @@
 {
   "functions": {
     "backend/index.js": {
-      "runtime": "nodejs22.x"
+      "runtime": "nodejs"
     }
   }
 }
+
