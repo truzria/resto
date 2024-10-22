@@ -18,9 +18,9 @@ app.post("/register-interest", (req, res) => {
     console.log(req.body);
     console.log(req.body.email);
     if (req.body.email === undefined) {
-        res.sendStatus(405);
+        res.sendFile(path.join(process.cwd(), 'frontend', 'index.html'));
     } else {
-        res.sendStatus(200);
+        res.sendFile(path.join(process.cwd(), 'frontend', 'thank-you-page.html'));
     }
 });
 
