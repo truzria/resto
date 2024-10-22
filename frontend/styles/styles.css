@@ -7,7 +7,7 @@
 
 h1 {
     font-family: 'made', sans-serif;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 body {
@@ -29,7 +29,7 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    min-height: 85vh;
     color: #5f5a4d;
 }
 
@@ -46,4 +46,31 @@ footer {
 
 .custom-color:hover {
     color: #7b5037;
+}
+
+.centered-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#email {
+    border: none;
+    background-color: #f5eee6;
+    margin-left: 10px;
+    margin-right: 15px;
+    align-content: center;
+}
+
+#interested-btn {
+    background-color: #5f5a4d;
+    color: #f5eee6;
+    border: #5f5a4d;
+}
+#back-homepage-btn {
+    background-color: #5f5a4d;
+    color: #f5eee6;
+    border: #5f5a4d;
+    text-decoration: none;
+    padding: 5px;
 }
