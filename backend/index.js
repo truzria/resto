@@ -17,7 +17,6 @@ app.post("/register-interest", (req, res) => {
     console.log("This is message in log for maria, in the line below will be logged request's body:");
     console.log(req.body);
     console.log(req.body.email);
-    console.log(req.body.username);
     if (req.body.email === undefined) {
         res.sendStatus(405);
     } else {
