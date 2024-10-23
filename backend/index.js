@@ -46,7 +46,10 @@ app.get("/", (req, res) => {
 app.post("/register-interest", (req, res) => {
     console.log("This is message in log for maria, in the line below will be logged request's body:");
     console.log(req.body);
-    if (req.body.email === undefined) {
+    // && AND
+    // || OR
+    // ! Negation
+    if (req.body.email === undefined || !req.body.email.includes("@") || !req.body.email.includes(".") ) {
         res.sendFile(path.join(process.cwd(), 'frontend', 'index.html'));
     } else {
         const queryText = 'INSERT INTO user_interests(email) VALUES($1) RETURNING *';
@@ -55,7 +58,7 @@ app.post("/register-interest", (req, res) => {
         client.query(queryText, values, (err, result) => {
             if (err) {
                 console.error('Error saving data', err);
-                res.status(500).send('Something went wrong');
+                res.status(500).send('Something went wrong, please enter unique email');
             } else {
                 console.log('Email saved:', result.rows[0]);
                 res.sendFile(path.join(process.cwd(), 'frontend', 'thank-you-page.html'));
