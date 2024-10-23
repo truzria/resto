@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extend: true}));
 app.use('/styles', express.static(path.join(process.cwd(), 'frontend', 'styles')));
 
 const client = new Client({
-    connectionString: "jdbc:postgresql://truzria:3x0X8vadaHs1mNqVpYYhujFxmAS6Mwvs@dpg-csbqqjrtq21c73a6dkqg-a.oregon-postgres.render.com/restodb_ra23",
+    connectionString: "postgresql://truzria:3x0X8vadaHs1mNqVpYYhujFxmAS6Mwvs@dpg-csbqqjrtq21c73a6dkqg-a.oregon-postgres.render.com/restodb_ra23",
     ssl: {
         rejectUnauthorized: false
     }
@@ -49,7 +49,18 @@ app.post("/register-interest", (req, res) => {
     if (req.body.email === undefined) {
         res.sendFile(path.join(process.cwd(), 'frontend', 'index.html'));
     } else {
-        res.sendFile(path.join(process.cwd(), 'frontend', 'thank-you-page.html'));
+        const queryText = 'INSERT INTO user_interests(email) VALUES($1) RETURNING *';
+        const values = [req.body.email];
+
+        client.query(queryText, values, (err, result) => {
+            if (err) {
+                console.error('Error saving data', err);
+                res.status(500).send('Something went wrong');
+            } else {
+                console.log('Email saved:', result.rows[0]);
+                res.sendFile(path.join(process.cwd(), 'frontend', 'thank-you-page.html'));
+            }
+        });
     }
 });
 
